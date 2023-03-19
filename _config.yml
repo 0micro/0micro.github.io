@@ -1,0 +1,307 @@
+source: .
+destination: ./_site
+collections_dir: .
+plugins_dir: _plugins/
+layouts_dir: _layouts/
+sitemap: true
+
+url: ""
+
+keep_files:
+  - .git
+  - .srv
+exclude:
+  - Gemfile
+  - gemfiles/
+  - Gemfile.lock
+  - sass-cache/
+  - jekyll-cache/
+  - node_modules
+  - vendor
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+include:
+  - .htaccess
+
+languages: ['en','ja']
+default_lang: 'en'
+exclude_from_localization: ['javascript', 'images', 'css']
+parallel_localization: false
+
+author: Micro
+
+github_username: 0micro
+
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+strict_front_matter: false
+
+safe: false
+disable_disk_cache: false
+ignore_theme_config: false
+timezone: Asia/Tokyo
+encoding: "UTF-8"
+
+show_drafts: true
+future: true
+lsi: true
+verbose: true
+profile: true
+show_dir_listing: true
+
+pygments: true
+
+plugins:
+  - jekyll-admin
+  - jekyll-autoprefixer
+  - jekyll-minifier
+  - jekyll/minibundle
+  - jekyll-workbox-plugin
+  - jekyll-target-blank
+  - "jekyll-github-metadata"
+  - jekyll-datapage-generator
+  - jekyll-auto-image
+#  - jekyll-git_metadata
+  - jekyll-analytics
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll_include_plugin
+#  - jekyll-github-chart
+  - jekyll-glossary_tooltip
+  - jekyll-giphy
+  - jekyll-mermaid
+  - jekyll_github_sample
+  - liquid-md5
+
+mermaid:
+  src: 'assets/mermaid.js'
+
+redirect_from:
+  json: false
+
+jekyll_compose:
+  default_front_matter:
+    drafts:
+      description:
+      image:
+      category:
+      tags:
+    posts:
+      description:
+      image:
+      category:
+      tags:
+      published: false
+      sitemap: false
+  auto_open: true
+
+# contentful:
+#  spaces:
+#    - example:                              # Jekyll _data folder identifier - Required
+#        space: cfexampleapi                 # Required
+#        access_token: b4c0n73n7fu1          # Required
+#        environment: master                 # Optional
+#        cda_query:                          # Optional
+#          include: 2
+#          limit: 100
+#        all_entries: true                   # Optional - Defaults to false, only grabbing the amount set on CDA Query
+#        all_entries_page_size: 1000         # Optional - Defaults to 1000, maximum amount of entries per CDA Request for all_entries
+#        content_types:                      # Optional
+#          cat: MyCoolMapper
+#        client_options:                     # Optional
+#          api_url: 'preview.contentful.com' # Defaults to 'api.contentful.com' which is Production
+#          max_include_resolution_depth: 5   # Optional - Defaults to 20, maximum amount of levels to resolve includes
+#        base_path: app_path                 # Optional - Defaults to Current directory
+#        destination: destination_in_data    # Optional - Defaults to _data/contentful/spaces
+#        individual_entry_files: true        # Optional - Defaults to false
+#        rich_text_mappings:                 # Optional - Defaults to {}
+#          embedded-entry-block: MyEntryRenderer
+
+target-blank:
+  css_class: ext-link
+  add_css_classes: css-class-one css-class-two
+  noopener: false
+  noreferrer: false
+  rel: noopener
+
+page_gen-dirs: true
+
+
+
+jekyll-minifier:
+  exclude: 'atom.xml'
+  preserve_php: true                # Default: false
+  remove_spaces_inside_tags: true   # Default: true
+  remove_multi_spaces: true         # Default: true
+  remove_comments: true             # Default: true
+  remove_intertag_spaces: true      # Default: false
+  remove_quotes: false              # Default: false
+  compress_css: true                # Default: true
+  compress_javascript: true         # Default: true
+  compress_json: true               # Default: true
+  simple_doctype: false             # Default: false
+  remove_script_attributes: false   # Default: false
+  remove_style_attributes: false    # Default: false
+  remove_link_attributes: false     # Default: false
+  remove_form_attributes: false     # Default: false
+  remove_input_attributes: false    # Default: false
+  remove_javascript_protocol: false # Default: false
+  remove_http_protocol: false       # Default: false
+  remove_https_protocol: false      # Default: false
+  preserve_line_breaks: false       # Default: false
+  simple_boolean_attributes: false  # Default: false
+  compress_js_templates: false      # Default: false
+  preserve_patterns:                # Default: (empty)
+  uglifier_args:
+    harmony: true                  # Default: (empty)
+
+workbox:
+  sw_src_filepath: sw.js
+  sw_dest_filename: sw.js
+  precache_recent_posts_num: 5
+  precache_glob_directory: /
+  precache_glob_patterns:
+    - "{js,css,fonts}/**/*.{js,css,eot,svg,ttf,woff}"
+    - index.html
+    - "about.html":
+      - about/
+      - contact/
+  precache_glob_ignores:
+    - "fonts/**/*"
+
+autoprefixer:
+  only_production: true
+  browsers:
+  - last 2 versions
+
+jekyll_admin:
+  hidden_links:
+    - posts
+    - pages
+    - staticfiles
+    - datafiles
+    - configuration
+  homepage: "pages"
+
+typescript:
+  temp_dir: .typescript
+  extensions: ['.ts', '.tsx']
+  copy_ext: []
+  command: ['tsc']
+  cache: true
+
+assets:
+  source_maps: true
+  destination: "/assets"
+  compression: false
+  gzip: false
+  defaults:
+    integrity:
+      {css,img,js}: false
+  caching:
+    enabled: true
+    path: ".jekyll-cache/assets"
+    type: file
+  precompile: []
+source_lang: en
+elasticsearch:
+  url: "https://noteswiper.github.io"
+tag_page_layout: tag_page
+tag_page_dir: tags
+responsive_image:
+  template: _includes/responsive-image.html
+  sizes:
+    - width: 320
+    - width: 480
+    - width: 800
+webp:
+  enabled: false
+
+  quality: 75
+
+  img_dir: ["/img"]
+
+  formats: [".jpeg", ".jpg", ".png", ".tiff"]
+
+  gifs: [".gif", ".apng"]
+
+  regenerate: false
+imgix:
+  source: assets.imgix.net
+jekyll_analytics:
+  GoogleAnalytics:
+    id:
+    anonymizeIp: false
+jekyll-mentions:
+  base_url: https://twitter.com
+toc:
+  min_level: 1
+  max_level: 6
+  ordered_list: false
+  no_toc_section_class: no_toc_section
+  list_id: toc
+  list_class: section_nav
+  sublist_class: ''
+  item_class: toc-entry
+  item_prefix: toc-
+titles_from_headings:
+  enabled: true
+  strip_title: false
+  collections: false
+language_data: data.lang.%%
+language_includes_dir: _i18n
+data_dir: _data
+
+markdown: kramdown
+highlighter: rouge
+excerpt_separator: \n\n
+incremental: false
+
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
+webrick:
+  headers:
+    hd: value1
+
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  gfm_emojis: true
+  gfm_quirks: [paragraph_end]
+#  auto_id_prefix:
+  auto_id_stripping: true
+  auto_ids: true
+  entity_output: as_char
+  footnote_backlink: "&#8617;"
+  footnote_backlink_inline: "false"
+  footnote_nr: 1
+#  footnote_prefix:
+  header_offset: 0
+  html_to_native: true
+  latex_headers: section,subsection,subsubsection,paragraph,subparagraph,subparagraph
+  line_width: 72
+  math_engine: mathjax
+  parse_block_html: true
+  parse_span_html: true
+  remove_block_html_tags: true
+  remove_line_breaks_for_cjk: false
+  remove_span_html_tags: false
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  syntax_highlighter: rouge
+#  template:
+  toc_levels: [1,2,3,4,5,6]
+  transliterated_header_ids: false
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+collections:
+  posts:
+    output: true
