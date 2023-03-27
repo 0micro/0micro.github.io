@@ -1,0 +1,42 @@
+# Jekyll Configuration
+#
+#
+
+url: "https://0micro.github.io"
+sitemap: true
+source: .
+destination: ./_site
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-avatar
+  - jekyll-coffeescript
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-mentions
+  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-titles-from-headings
+  - jekyll-seo-tag
+  - jekyll-relative-links
+
+safe: false
+
+lang: en
+encoding: "UTF-8"
+
+name: "0micro"
+title: "0micro"
+
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+collections_dir: .
+includes_dir: _includes
+layouts_dir: _layouts
+data_dir: _data
+plugins_dir: _plugins
+
+collections:
+  posts:
+    output: true

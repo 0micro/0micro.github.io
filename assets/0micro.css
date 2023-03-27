@@ -1,0 +1,157 @@
+@keyframes sk-scaleout {
+    0% {
+        transform: scale(0) rotate(0deg);
+        border-radius: 4px;
+    }
+
+    100% {
+        transform: scale(1.0) rotate(360deg);
+        opacity: 0;
+        border-radius: 50px;
+    }
+}
+
+audio {
+    border-radius: 2px;
+}
+
+em {
+    text-decoration: italic;
+}
+
+h1 {
+    text-shadow: rgba(255, 255, 255, 0.6) 0 0 24px;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+    padding: 0 4px;
+}
+
+code {
+    background: rgba(0, 0, 0, 0.2);
+    margin: auto;
+    padding: 2px;
+}
+
+a code {
+    background: 0;
+}
+
+a:link {
+    margin: auto;
+    transition: all 0.25s ease-out;
+    background: rgba(255, 255, 255, 0.05);
+    text-align: center;
+    border-radius: 0;
+    font-size: 16px;
+    flex: 1;
+}
+
+.flex {
+    display: flex;
+}
+
+strong:before {
+    content: "{";
+}
+
+strong:before,
+strong:after {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+strong:after {
+    content: "}";
+}
+
+hr {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+a img {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+a:hover {
+    color: lightgreen;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    flex: 1.5;
+    border-radius: 0.3em;
+}
+
+body {
+    background: #222222;
+    color: #DDDDDD;
+    margin: auto;
+    backdrop-filter: blur(8px);
+}
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: #0bd;
+    z-index: 90;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    margin: 200px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    animation: sk-scaleout 1.0s infinite ease-out;
+}
+
+.loadingtext {
+    text-align: center;
+}
+
+.udp-gothic {
+    font-family: 'BIZ UDPGothic', sans-serif;
+}
+
+.handrawn {
+    font-family: 'Delicious Handrawn', cursive
+}
+
+.firacode {
+    font-family: 'Fira Code', monospace
+}
+
+.firasans {
+    font-family: 'Fira Sans', sans-serif
+}
+
+.notosans-jp {
+    font-family: 'Noto Sans JP', sans-serif
+}
+
+.opensans {
+    font-family: 'Open Sans', sans-serif
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif
+}
+
+.sourcesans-pro {
+    font-family: 'Source Sans Pro', sans-serif
+}
+
+.ubuntu {
+    font-family: 'Ubuntu', sans-serif
+}

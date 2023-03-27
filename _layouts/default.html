@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | site.lang | default: "en" }}">
+    <head>
+        {% include head.html %}
+    </head>
+    <body spellcheck="true">
+        <noscript>
+            <p>Your browser have not javascript enabled.</p>
+            <p>please enable javascript to view.</p>
+        </noscript>
+        <div id="loading">
+            <div class="spinner"></div>
+            <h1 class="loadingtext ubuntu">Loading...</h1>
+        </div>
+        {% include header.html %}
+        <main class="page-content" aria-label="Content">
+            <div class="wrapper">
+                {{ content }}
+            </div>
+        </main>
+        {% include footer.html %}
+    </body>
+</html>
